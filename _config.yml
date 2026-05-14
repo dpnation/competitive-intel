@@ -1,0 +1,12 @@
+title: Applause Competitive Intel
+description: Weekly monitoring of 8 QA/testing competitors — Testlio, Testbirds, UserTesting, Qualitest, QualityLogic, Test IO, Global App Testing, UNGUESS.
+theme: minima
+
+minima:
+  skin: auto  # respects OS dark/light mode
+
+# Exclude non-site files from the Jekyll build
+exclude:
+  - "*.ps1"
+  - "GITHUB-SETUP.md"
+  - ".gitignore"
