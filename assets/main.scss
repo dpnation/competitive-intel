@@ -1,0 +1,179 @@
+---
+---
+
+@charset "utf-8";
+
+// ── Brand Colors ──────────────────────────────────────────────────────────
+// Override minima defaults before import so variables take effect
+$brand-color:      #0272B4;   // Blue 500 — links & accents
+$text-color:       #3D3D3D;   // Gray 700 — body text
+$background-color: #FFFFFF;
+
+@import "minima";
+
+// ── Header ────────────────────────────────────────────────────────────────
+.site-header {
+  background-color: #012E48;
+  border-top: 4px solid #0272B4;
+  border-bottom: none;
+  min-height: 60px;
+}
+
+.site-title,
+.site-title:visited {
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.site-title:hover {
+  color: #CFE9FB;
+  text-decoration: none;
+}
+
+.site-nav {
+  background-color: #012E48;
+}
+
+.site-nav .page-link {
+  color: #CFE9FB;
+}
+
+.site-nav .page-link:hover {
+  color: #FFFFFF;
+}
+
+.site-nav .menu-icon > svg path {
+  fill: #CFE9FB;
+}
+
+// ── Footer ────────────────────────────────────────────────────────────────
+.site-footer {
+  background-color: #012E48;
+  border-top: 4px solid #0272B4;
+  color: #CFE9FB;
+}
+
+.site-footer a,
+.site-footer a:visited {
+  color: #E6F3FA;
+}
+
+.site-footer a:hover {
+  color: #FFFFFF;
+}
+
+.footer-heading {
+  color: #FFFFFF;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-list,
+.social-media-list {
+  color: #CFE9FB;
+}
+
+// ── Page content headings ─────────────────────────────────────────────────
+.page-content h1 {
+  color: #012E48;
+}
+
+.page-content h2 {
+  color: #01446C;
+  border-bottom: 2px solid #E6F3FA;
+  padding-bottom: 0.3em;
+  margin-top: 2em;
+}
+
+.page-content h3 {
+  color: #025B90;
+}
+
+.post-title {
+  color: #012E48;
+}
+
+// ── Links ─────────────────────────────────────────────────────────────────
+a {
+  color: #0272B4;
+}
+
+a:hover {
+  color: #012E48;
+}
+
+a:visited {
+  color: #01446C;
+}
+
+// ── Tables ────────────────────────────────────────────────────────────────
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+  box-shadow: 0 1px 4px rgba(1, 46, 72, 0.1);
+}
+
+table th {
+  background-color: #012E48;
+  color: #FFFFFF;
+  padding: 0.75em 1em;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+table td {
+  padding: 0.65em 1em;
+  border-bottom: 1px solid #E0E0E0;
+  vertical-align: top;
+}
+
+table tr:nth-child(even) td {
+  background-color: #E6F3FA;
+}
+
+table tr:hover td {
+  background-color: #CFE9FB;
+  transition: background-color 0.15s ease;
+}
+
+// ── Horizontal rules ──────────────────────────────────────────────────────
+hr {
+  border: none;
+  border-top: 2px solid #E6F3FA;
+  margin: 2em 0;
+}
+
+// ── Blockquotes ───────────────────────────────────────────────────────────
+blockquote {
+  border-left: 4px solid #0272B4;
+  color: #3D3D3D;
+  background-color: #E6F3FA;
+  padding: 0.75em 1.25em;
+  margin-left: 0;
+}
+
+// ── Code ──────────────────────────────────────────────────────────────────
+code {
+  background-color: #E6F3FA;
+  color: #012E48;
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+  font-size: 0.9em;
+}
+
+// ── Page header accent bar ────────────────────────────────────────────────
+.page-content {
+  padding-top: 2em;
+}
+
+// ── Wrapper max-width ─────────────────────────────────────────────────────
+.wrapper {
+  max-width: 900px;
+}

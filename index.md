@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Applause Competitive Intelligence
+title: QA Competitive Intelligence
 ---
 
 Weekly competitive intelligence on 8 QA/testing vendors. Scans run every Monday and are published here automatically.
