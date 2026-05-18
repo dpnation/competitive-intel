@@ -1,9 +1,9 @@
----
+﻿---
 layout: page
 title: QA Competitive Intelligence
 ---
 
-Weekly competitive intelligence on 8 QA/testing vendors. Scans run every Monday and are published here automatically.
+Weekly competitive intelligence on QA/testing vendors. Scans run every Monday and are published here automatically. Scans run every Monday and are published here automatically.
 
 **Competitors tracked:** Testlio · Testbirds · UserTesting · Qualitest · QualityLogic · Test IO (EPAM) · Global App Testing · UNGUESS · Level Access · Fable
 
