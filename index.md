@@ -15,4 +15,5 @@ Weekly competitive intelligence on 8 QA/testing vendors. Scans run every Monday 
 
 | Week | Key Highlights |
 |------|---------------|
+| [May 18, 2026](reports/2026-05-18) | Testlio launches AI Chatbot Testing; UserTesting acquires User Interviews; Level Access & Fable added |
 | [May 11, 2026](reports/2026-05-11) | First capture — GAT launches GroundTruth AI; AI narrative dominates all competitors; UserTesting earns Forrester Wave Leader |
