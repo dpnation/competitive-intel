@@ -1,0 +1,120 @@
+# Competitive Digest — 2026-05-18
+
+## Summary
+
+This week's scan is **moderately active**, with two clear standouts. **Testlio** had the most newsworthy move since last week: a full commercial launch of its AI Chatbot Testing solution on April 16, backed by external press coverage and early enterprise adoption. **UserTesting** carries a significant omission from our prior baseline — the January 7, 2026 acquisition of User Interviews was not captured in our May 11 snapshot and represents a major strategic move. **Level Access** and **Fable** are scanned here for the first time (no prior baselines existed), with both showing notable activity: Level Access is running a GAAD-week campaign and Fable completed a CEO transition in September 2025. The remaining six competitors show low-to-no change against their baselines.
+
+---
+
+## Competitor Updates
+
+### Testlio
+**Signal level:** 🔴 High
+**URLs checked:** https://testlio.com/news/, https://testlio.com/blog/category/press-releases/, https://www.testlio.com/blog/testlio-ai-chatbot-testing-announcement
+**Changes noted:**
+- **New product launched (April 16, 2026):** AI Chatbot Testing solution — a human-led assessment service built around a four-domain risk framework (safety & security, consistency, accuracy & logic, user experience). Powered by their LeoMatch™ tester-matching tech; claims 3x faster tester selection and 2x more critical issues uncovered vs. manual selection.
+- **Early enterprise adoption:** Hallmark+ (13-platform, 5-year partner, $1.34M annual savings) is among the first adopters.
+- **Thought leadership push:** CEO/founder Kristel Kruustük delivered a STAREAST keynote "What Does 'Quality' Mean for AI Testing?" (April 26–May 1, Orlando). Blog posts: "Three Shifts Defining AI Testing in 2026," "7 Trends Reshaping Software Testing in 2026."
+- **Growth signal:** Press release titled "Testlio Accelerates Growth as AI Testing Demand Surges."
+- **VP EMEA/APAC speaking engagement:** Tom Chmielewski at dLocal payments event, May 20, 2026 (APM testing in complex markets).
+- **Note on site:** Testlio.com homepage remains a JS-rendered SPA — web fetch still returns empty. Content gathered via search/PR coverage. Prior baseline marked as FAILED.
+
+### Testbirds
+**Signal level:** 🟢 Low
+**URLs checked:** https://www.testbirds.com/en/, https://www.testbirds.com/company/newsroom-press-blog/
+**Changes noted:**
+- No new major announcements found beyond those already captured in the May 11 baseline.
+- PCI-DSS v4.0.1 certification, EU Withdrawal Button webinar (June 19, 2026), and AI/Agent Readiness positioning all confirmed unchanged and consistent with baseline.
+- European Accessibility Act (EAA) compliance deadline (June 2026) remains active marketing focus.
+- Upcoming event: Testbirds Advisory Circle – Summer Edition (date not specified).
+
+### UserTesting
+**Signal level:** 🔴 High
+**URLs checked:** https://www.usertesting.com/company/newsroom/press-releases/usertesting-acquires-user-interviews, https://www.usertesting.com/resources/product-releases
+**Changes noted:**
+- **⚠️ Baseline gap identified:** The **acquisition of User Interviews** (announced January 7, 2026) was not captured in the May 11 baseline. This is a material strategic move: UserTesting acquired User Interviews, the leading participant recruitment platform for user research and AI training. User Interviews continues as a standalone product; no forced migration. The combined entity strengthens enterprise panel coverage and AI training data supply.
+- **April 2026 product release** (confirmed live, postdates baseline context): AI-powered test creation, AI-generated summaries for imported videos and reports, Spanish-language transcription (in addition to English), Results API for programmatic study/metadata access, grouped questions and screen blur for Interaction Tests.
+- **Figma plugin** (UserTesting for Figma) is now shipping with Team-based Unlimited plans.
+- Blog: "A note to our customers: what's changed and what's next" — appears to address post-acquisition positioning.
+- Baseline should be updated to reflect User Interviews acquisition and April release features.
+
+### Qualitest
+**Signal level:** 🟡 Medium
+**URLs checked:** https://www.qualitestgroup.com/, https://www.qualitestgroup.com/news-center/
+**Changes noted:**
+- **Mexico City delivery center** confirmed open and operational — may have been announced before the May 11 baseline but was not reflected there. Qualitest now has Latin American delivery in both Argentina and Mexico City, targeting US time-zone delivery. Part of an announced trio of expansions (Austin, Lisbon, Mexico City).
+- **SAP Sapphire 2026** (Madrid, May 19–21): Qualitest is actively exhibiting/participating. "Confidence at SAP Go-Live" remains their core SAP messaging.
+- Otherwise, positioning ("World's Leading AI-Led Quality Engineering Company," COCO platform, AI Data Services) appears consistent with the May 11 baseline.
+- No new product launches or analyst recognitions found this week.
+
+### QualityLogic
+**Signal level:** 🟢 Low
+**URLs checked:** https://www.qualitylogic.com/, https://www.qualitylogic.com/knowledge-center/
+**Changes noted:**
+- **IEEE 1547.1 DER webinar** (May 14, 2026) confirmed as having occurred — was listed as "upcoming" in the May 11 baseline.
+- No new blog posts, product launches, or positioning changes found for the May 11–18 window.
+- The Quality Trail: May 2026 edition not yet indexed in search results; baseline headline ("A Smarter Approach to Software & QA Testing Services") and overall positioning appear unchanged.
+
+### Test IO (EPAM)
+**Signal level:** 🟡 Medium
+**URLs checked:** https://test.io/, https://solutionshub.epam.com/solution/test-io
+**Changes noted:**
+- **EPAM Agentic QA™** is now fully tied to Test IO's positioning. Formally launched October 2025 as part of EPAM AI/Run™ Tools, Agentic QA introduces "Adaptive Regression" testing combining AI with crowd-sourced QA experience. Test IO's decade of crowd-test data is being used to train small language models (SLMs) underpinning the new product.
+- This represents a significant repositioning of the Test IO brand from pure crowdtesting toward an AI-augmented hybrid model — not a "new" development this week, but it was not captured in the FAILED May 11 baseline.
+- Test IO's homepage remains a JS SPA; web fetch still returns empty. No press releases found for May 12–18.
+- **Baseline established this run** based on search/press coverage.
+
+### Global App Testing
+**Signal level:** 🟢 Low
+**URLs checked:** https://www.globalapptesting.com/, https://www.prnewswire.com/news/global-app-testing/
+**Changes noted:**
+- **GroundTruth AI** confirmed launched March 23, 2026 (per PR Newswire). Baseline already noted this as the headline new product — no incremental launch news found this week.
+- ISO 27001 certification referenced in coverage (date unclear; may predate baseline).
+- No new press releases or product announcements found in the May 11–18 window.
+- Baseline headline, strategic goals framework, and GroundTruth AI positioning all appear consistent with May 11 snapshot.
+
+### UNGUESS
+**Signal level:** 🟢 Low
+**URLs checked:** https://unguess.io/, https://blog.unguess.io/
+**Changes noted:**
+- **"Stranger Trends 2026"** report published (UX, Software Quality, and Cybersecurity in complex digital systems) — not present in the May 11 baseline; likely a recent publication.
+- No new product launches, partnerships, or pricing changes found.
+- Core positioning ("Build products people actually love to use," five service lines including Cyber Security and AI Training) appears consistent with May 11 baseline.
+
+### Level Access
+**Signal level:** 🟡 Medium *(first run — no prior baseline)*
+**URLs checked:** https://www.levelaccess.com/, https://www.levelaccess.com/gaad/, https://client.levelaccess.com/hc/en-us/articles/38642328668311-Access-Engine-updates-2026
+**Changes noted (baseline established this run):**
+- **GAAD 2026 campaign (May 21):** Major marketing push for Global Accessibility Awareness Day's 15th anniversary. Includes: 20% off Level Access Academy training in May; GAAD Celebration Toolkit (comms schedule, social templates, email templates, custom deck); three free year-long Academy subscriptions giveaway; on-demand presentations for front-end devs and content creators.
+- **State of Digital Accessibility Report 2025–2026** published (7th annual edition), with on-demand webinar "The State of Digital Accessibility: What's Holding Teams Back and How to Move Forward in 2026."
+- **Access Engine updates (March 2026):** Improved accuracy across 18 automated scan rules — autocomplete attribute validation, ARIA role/state enforcement, ARIA attribute usage/restrictions, accessible name/reference validation. Applies to scans run after March 30.
+- **AI Assistive Technology: 2026 Accessibility Trends** blog post published — trend analysis piece on AI's role in assistive tech.
+- **Positioning:** "End-to-End Digital Accessibility" — enterprise platform covering audits, automated scanning (Access Engine), training (Level Access Academy), and managed services.
+
+### Fable
+**Signal level:** 🟡 Medium *(first run — no prior baseline)*
+**URLs checked:** https://makeitfable.com/, https://makeitfable.com/category/press-release/
+**Changes noted (baseline established this run):**
+- **CEO change (September 1, 2025):** Toan Dinh appointed CEO; founder Alwar Pillai moved to Executive Chair of the Board. Dinh has 15+ years of SaaS scaling experience (Boast, Patsnap, TouchBistro, Achievers); grew revenue $10M→$90M+ and raised $500M+ in prior roles.
+- **$25M Series B** from Five Elms Capital (raised prior to CEO change, announced 2024).
+- **Product:** Fable Engage — connects enterprise digital teams to people with disabilities for accessibility testing and user research. Integrates with Jira and Figma.
+- **Recent content:** Case study "How Salesforce shapes AI UX design with accessibility" and article "Accessibility and AI: Insights from assistive technology users" — both position Fable at the intersection of AI development and accessibility.
+- **Differentiation:** Exclusively disability-focused testing community; human-powered assistive tech testing (screen readers, alternative inputs); WCAG / EN 301 549 / ADA compliance evidence.
+
+---
+
+## Fetch errors
+
+- **Testlio homepage** (https://www.testlio.com/) — JS-rendered SPA, web fetch returns empty. Worked around via search and press coverage.
+- **Test IO homepage** (https://test.io/) — JS-rendered SPA, web fetch returns empty. Worked around via EPAM SolutionsHub and press coverage.
+- All other URLs: web_fetch tool restricted to user-provenance URLs in this environment; all fetching performed via WebSearch instead. No complete fetch failures on the search side.
+
+---
+
+## Notes
+
+- **UserTesting User Interviews gap:** The January 2026 acquisition was a significant oversight in the May 11 baseline. Baseline has been updated this run.
+- **Level Access and Fable** are new entrants to the tracker (added to competitors.json but no prior baselines). Both baselines established today.
+- **GAAD timing (May 21):** Level Access, Fable, and QualityLogic all have accessibility-related activities tied to this date — worth monitoring next week for any campaign results or announcements.
+- **Competitors.json now has 10 entries** (vs. 8 originally tracked). Level Access and Fable added since the last digest.
+- **Recommended URL additions:** Consider adding https://test.io/resources/blog/ and https://www.levelaccess.com/news/ to the config for more direct press monitoring.
