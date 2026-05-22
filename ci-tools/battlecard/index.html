@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/x-icon" href="/competitive-intel/favicon.ico">
 <title>Battlecard Builder — Applause Competitive Intelligence</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
@@ -118,6 +119,11 @@
     overflow: hidden;
   }
 
+  .hero-constrain {
+    max-width: 956px;
+    margin: 0 auto;
+  }
+
   .hero::before {
     content: '';
     position: absolute;
@@ -138,6 +144,7 @@
 
   .hero-inner {
     max-width: 860px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
   }
@@ -752,6 +759,7 @@
 
 <!-- ── Hero ── -->
 <section class="hero">
+  <div class="hero-constrain">
   <div class="hero-inner">
     <div class="hero-eyebrow">⚡ Competitive Intelligence</div>
     <h1>Battlecard Builder<br><span>for Applause</span></h1>
@@ -777,6 +785,7 @@
         <span class="lbl">Output format</span>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -1041,7 +1050,7 @@
       <div class="owner-avatar">DP</div>
       <div class="owner-info">
         <div class="owner-name">Dana Prey</div>
-        <div class="owner-role">Product Marketing Manager · Applause</div>
+        <div class="owner-role">Product Marketing · Applause</div>
         <div class="owner-links">
           <a href="https://claude.ai" target="_blank" class="owner-link primary">Open Battlecard Builder in Claude ↗</a>
           <a href="mailto:dprey@applause.com" class="owner-link">dprey@applause.com</a>
