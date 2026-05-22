@@ -12,3 +12,5 @@ exclude:
   - "*.ps1"
   - "GITHUB-SETUP.md"
   - ".gitignore"
+include:
+  - ci-tools
