@@ -305,19 +305,25 @@
   }
 
   .step {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 0 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
     position: relative;
   }
 
+  .step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 46px;
+  }
+
   .step:not(:last-child) .step-line {
-    position: absolute;
-    left: 23px;
-    top: 48px;
-    bottom: 0;
+    flex: 1;
     width: 2px;
     background: var(--blue-100);
+    margin-top: 6px;
   }
 
   .step-num {
@@ -332,11 +338,11 @@
     font-size: 15px;
     font-weight: 700;
     flex-shrink: 0;
-    position: relative;
-    z-index: 1;
   }
 
   .step-body {
+    flex: 1;
+    min-width: 0;
     padding-bottom: 36px;
   }
 
@@ -830,8 +836,7 @@
 
     <div class="steps">
       <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-line"></div>
+        <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
         <div class="step-body">
           <h3>Open Claude and trigger the skill</h3>
           <p>Start a conversation in Claude Enterprise with a plain-language request. The skill recognizes battlecard-related requests automatically. You can be as specific or as open-ended as you like.</p>
@@ -848,8 +853,7 @@
       </div>
 
       <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-line"></div>
+        <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
         <div class="step-body">
           <h3>The skill fetches fresh intel</h3>
           <p>Before generating anything, the skill automatically fetches our weekly competitive scan at <span class="hl">dpnation.github.io/competitive-intel</span> — pulling all reports from the last 6 months. It extracts signal-level findings (🔴 High / 🟡 Medium / 🟢 Low) for the target competitor and maps them to the card.</p>
@@ -858,8 +862,7 @@
       </div>
 
       <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-line"></div>
+        <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
         <div class="step-body">
           <h3>Review and confirm the content plan</h3>
           <p>The skill will show you what it's working with before generating — flagging what it found, what's uncertain, and any fields that need your input. You can redirect or add context here before it writes the card.</p>
@@ -867,8 +870,7 @@
       </div>
 
       <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-line"></div>
+        <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
         <div class="step-body">
           <h3>Download the .docx</h3>
           <p>The output is a formatted Word document — landscape orientation, Applause brand colors, all standard battlecard sections (Offensive table, Defensive table, Company Overview, Win Stories, Call to Action). Open in Word and Export → PDF if needed for sharing.</p>
@@ -967,32 +969,28 @@
 
     <div class="steps">
       <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-line"></div>
+        <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
         <div class="step-body">
           <h3>Web research the company</h3>
           <p>Searches their homepage, LinkedIn, recent press, G2/Capterra reviews, and any analyst mentions. Populates all standard card fields from public sources.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-line"></div>
+        <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
         <div class="step-body">
           <h3>Scan the full Cowork archive</h3>
           <p>Checks all historical scan reports for any passing mention of the company — even in cross-competitor themes or footnotes.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-line"></div>
+        <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
         <div class="step-body">
           <h3>Classify the solution area</h3>
           <p>Determines where they compete (accessibility, payments, crowdtesting, AI testing, etc.) and pulls in the relevant solution-area landscape automatically.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-line"></div>
+        <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
         <div class="step-body">
           <h3>Build a hybrid card</h3>
           <p>Outputs a full competitor card plus a "How [Company] fits the [Solution Area] landscape" section — giving reps both the specific intel and the broader competitive context. All unverified fields are flagged clearly. The skill also recommends adding the company to the weekly scan going forward.</p>
