@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Battlecard Builder — Applause Competitive Intelligence</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --blue-500: #0272B4;
+    --blue-600: #025B90;
+    --blue-700: #01446C;
+    --blue-800: #012E48;
+    --blue-100: #E6F3FA;
+    --blue-50:  #F7FBFE;
+    --aqua-500: #00C0A3;
+    --aqua-600: #009A82;
+    --yellow-500: #FFC400;
+    --gray-700: #3D3D3D;
+    --gray-600: #6B6B6B;
+    --gray-400: #C2C2C2;
+    --gray-200: #F0F0F0;
+    --white: #FFFFFF;
+    --font: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    font-size: 16px;
+    color: var(--gray-700);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── Top nav bar ── */
+  .topbar {
+    background: var(--blue-700);
+    height: 4px;
+    width: 100%;
+  }
+
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--blue-700);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-brand .wordmark {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-500);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .nav-divider {
+    width: 1px;
+    height: 18px;
+    background: var(--gray-400);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--blue-500); }
+
+  .nav-badge {
+    background: var(--aqua-500);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, var(--blue-800) 0%, var(--blue-700) 50%, var(--blue-600) 100%);
+    padding: 72px 48px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,192,163,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 20%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(2,114,180,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,192,163,0.15);
+    border: 1px solid rgba(0,192,163,0.3);
+    color: var(--aqua-500);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span {
+    color: var(--aqua-500);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    max-width: 580px;
+    line-height: 1.65;
+    margin-bottom: 36px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero-stat .num {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-stat .lbl {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.15);
+    align-self: stretch;
+  }
+
+  /* ── Main content ── */
+  .content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  /* ── Section ── */
+  .section {
+    padding-top: 60px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--aqua-500);
+    margin-bottom: 10px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--blue-700);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .section p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--gray-600);
+    margin-bottom: 12px;
+  }
+
+  /* ── What it does cards ── */
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .cap-card {
+    background: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-radius: 10px;
+    padding: 22px 22px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cap-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--blue-500);
+    border-radius: 10px 0 0 10px;
+  }
+
+  .cap-card.accent::before { background: var(--aqua-500); }
+
+  .cap-icon {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .cap-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue-700);
+    margin-bottom: 7px;
+    letter-spacing: -0.01em;
+  }
+
+  .cap-card p {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ── How to use: step list ── */
+  .steps {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 20px;
+    position: relative;
+  }
+
+  .step:not(:last-child) .step-line {
+    position: absolute;
+    left: 23px;
+    top: 48px;
+    bottom: 0;
+    width: 2px;
+    background: var(--blue-100);
+  }
+
+  .step-num {
+    width: 46px;
+    height: 46px;
+    background: var(--blue-500);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-body {
+    padding-bottom: 36px;
+  }
+
+  .step-body h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blue-700);
+    margin-bottom: 8px;
+    padding-top: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .step-body p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .step-body p:last-child { margin-bottom: 0; }
+
+  /* ── Prompt examples ── */
+  .prompt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .prompt {
+    background: var(--blue-800);
+    border-left: 3px solid var(--aqua-500);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+
+  .prompt .label {
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--aqua-500);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── Card type explainer ── */
+  .card-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .card-type {
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .card-type-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .badge-blue { background: var(--blue-100); color: var(--blue-600); }
+  .badge-aqua { background: rgba(0,192,163,0.12); color: var(--aqua-600); }
+  .badge-gold { background: rgba(255,196,0,0.15); color: #8B6A00; }
+
+  .card-type h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue-700);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .card-type p {
+    font-size: 12.5px;
+    color: var(--gray-600);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .card-type ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .card-type ul li {
+    font-size: 12px;
+    color: var(--gray-600);
+    padding: 3px 0 3px 14px;
+    position: relative;
+  }
+
+  .card-type ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gray-400);
+    font-size: 11px;
+  }
+
+  /* ── Intel box explainer ── */
+  .intel-demo {
+    background: var(--blue-800);
+    border: 1.5px solid var(--yellow-500);
+    border-left: 4px solid var(--aqua-500);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-top: 20px;
+  }
+
+  .intel-demo-hdr {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--yellow-500);
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .intel-demo-row {
+    display: grid;
+    grid-template-columns: 90px 130px 1fr;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    align-items: start;
+  }
+
+  .intel-demo-row:last-child { border-bottom: none; }
+
+  .intel-signal {
+    font-size: 12px;
+    color: var(--yellow-500);
+    font-weight: 600;
+  }
+
+  .intel-date {
+    font-size: 11.5px;
+    color: rgba(168,212,245,0.9);
+    font-family: var(--mono);
+  }
+
+  .intel-finding {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+  }
+
+  /* ── Tips ── */
+  .tips {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .tip {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--gray-200);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .tip-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tip-body {
+    font-size: 13.5px;
+    color: var(--gray-700);
+    line-height: 1.55;
+  }
+
+  .tip-body strong {
+    color: var(--blue-700);
+    font-weight: 600;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: var(--gray-200);
+    margin: 60px 0 0;
+  }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--blue-50);
+    border-top: 1px solid var(--blue-100);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-brand {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-500);
+  }
+
+  .footer-meta {
+    font-size: 12px;
+    color: var(--gray-400);
+  }
+
+  /* ── Table of contents ── */
+  .toc {
+    background: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 36px 0 0;
+  }
+
+  .toc-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-500);
+    margin-bottom: 14px;
+  }
+
+  .toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+  }
+
+  .toc-list a {
+    font-size: 13.5px;
+    color: var(--blue-600);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .toc-list a:hover { color: var(--blue-500); text-decoration: underline; }
+
+  .toc-list a::before {
+    content: '→';
+    font-size: 11px;
+    color: var(--aqua-500);
+  }
+
+  /* ── Inline highlight ── */
+  .hl {
+    background: var(--blue-100);
+    color: var(--blue-700);
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.92em;
+  }
+
+  /* ── Warning / note box ── */
+  .note {
+    background: rgba(255,196,0,0.08);
+    border-left: 3px solid var(--yellow-500);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: var(--gray-700);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  .note strong { color: #7A5800; }
+
+  /* ── Responsive ── */
+  @media (max-width: 700px) {
+    nav { padding: 0 20px; }
+    .hero { padding: 48px 20px 44px; }
+    .content { padding: 0 20px 60px; }
+    .card-types { grid-template-columns: 1fr; }
+    .toc-list { grid-template-columns: 1fr; }
+    footer { padding: 24px 20px; }
+  }
+
+  /* ── Owner card ── */
+  .owner-section {
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--gray-200);
+  }
+  .owner-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-top: 16px;
+  }
+  .owner-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    letter-spacing: -0.02em;
+  }
+  .owner-info { flex: 1; }
+  .owner-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blue-700);
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+  }
+  .owner-role {
+    font-size: 12.5px;
+    color: var(--gray-600);
+    margin-bottom: 8px;
+  }
+  .owner-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .owner-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--blue-500);
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid var(--blue-100);
+    border-radius: 20px;
+    background: white;
+    transition: all 0.15s;
+  }
+  .owner-link:hover {
+    background: var(--blue-500);
+    color: white;
+    border-color: var(--blue-500);
+  }
+  .owner-link.primary {
+    background: var(--blue-500);
+    color: white;
+    border-color: var(--blue-500);
+  }
+  .owner-link.primary:hover {
+    background: var(--blue-600);
+    border-color: var(--blue-600);
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span class="wordmark">APPLAUSE°</span>
+    <div class="nav-divider"></div>
+    <span>Battlecard Builder</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#what">What It Does</a></li>
+    <li><a href="#how">How to Use</a></li>
+    <li><a href="#cards">Card Types</a></li>
+    <li><a href="#intel">Intel Feed</a></li>
+    <li><a href="#tips">Tips</a></li>
+    <li><a href="https://claude.ai" target="_blank" style="background:var(--blue-500);color:white;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;">Open in Claude ↗</a></li>
+    <li><span class="nav-badge">Internal Tool</span></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">⚡ Competitive Intelligence</div>
+    <h1>Battlecard Builder<br><span>for Applause</span></h1>
+    <p class="hero-sub">An AI-powered skill that generates sales battlecards on demand — pulling live competitive intel from our weekly site scan, researching unknown competitors automatically, and producing formatted Word documents ready for rep use.</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <span class="num">3</span>
+        <span class="lbl">Card types supported</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="num">10+</span>
+        <span class="lbl">Tracked competitors</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="num">Weekly</span>
+        <span class="lbl">Intel refresh cadence</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="num">.docx</span>
+        <span class="lbl">Output format</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Table of Contents ── -->
+<div class="content">
+  <div class="toc">
+    <div class="toc-label">On this page</div>
+    <ul class="toc-list">
+      <li><a href="#what">What it does</a></li>
+      <li><a href="#how">How to use it</a></li>
+      <li><a href="#cards">Card types explained</a></li>
+      <li><a href="#intel">The intel feed</a></li>
+      <li><a href="#unknown">Unknown competitors</a></li>
+      <li><a href="#tips">Tips for best results</a></li>
+      <li><a href="#contact">Owner &amp; contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ── What it does ── -->
+  <section class="section" id="what">
+    <div class="section-label">Overview</div>
+    <h2>What the Battlecard Builder does</h2>
+    <p>The Battlecard Builder is a Claude skill that generates formatted, print-ready competitive battlecards. You describe what you need — a specific competitor, a solution area, or a company you've never heard of — and it handles the research, structures the content, pulls the latest competitive intel from our weekly site scan, and outputs a Word document ready to share with reps.</p>
+    <p>It lives inside Claude Enterprise. Anyone on the team with the skill installed can trigger it with a plain-language request.</p>
+
+    <div class="capability-grid">
+      <div class="cap-card">
+        <span class="cap-icon">📄</span>
+        <h3>On-demand generation</h3>
+        <p>Trigger a card at any time — before a big deal, after a competitor makes a move, or when a rep asks "what do we have on X?"</p>
+      </div>
+      <div class="cap-card accent">
+        <span class="cap-icon">⚡</span>
+        <h3>Live intel baked in</h3>
+        <p>Automatically fetches our weekly competitive scan and surfaces the most recent findings at the top of every card.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🔍</span>
+        <h3>Auto-researches unknowns</h3>
+        <p>If you ask about a company not in our corpus, it web-searches them, classifies their solution area, and builds a card from scratch.</p>
+      </div>
+      <div class="cap-card accent">
+        <span class="cap-icon">🗺️</span>
+        <h3>Solution context included</h3>
+        <p>For any competitor, it can overlay the relevant solution-area landscape — who else plays there and how Applause is positioned.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── How to use ── -->
+  <section class="section" id="how">
+    <div class="section-label">Usage</div>
+    <h2>How to use it — step by step</h2>
+    <p>The skill is conversational. You don't fill out a form — you just describe what you need. Here's the typical flow:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+        <div class="step-body">
+          <h3>Open Claude and trigger the skill</h3>
+          <p>Start a conversation in Claude Enterprise with a plain-language request. The skill recognizes battlecard-related requests automatically. You can be as specific or as open-ended as you like.</p>
+          <div class="prompt-list">
+            <div class="prompt">
+              <span class="label">Example prompts</span>
+              "Build a battlecard for Testlio"<br>
+              "Build an accessibility testing battlecard"<br>
+              "I keep hearing about Evinced — can we build a card on them?"<br>
+              "Refresh the Fable battlecard with the latest Cowork scan"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+        <div class="step-body">
+          <h3>The skill fetches fresh intel</h3>
+          <p>Before generating anything, the skill automatically fetches our weekly competitive scan at <span class="hl">dpnation.github.io/competitive-intel</span> — pulling all reports from the last 6 months. It extracts signal-level findings (🔴 High / 🟡 Medium / 🟢 Low) for the target competitor and maps them to the card.</p>
+          <p>For unknown competitors, it also web-searches their homepage, LinkedIn, recent press, and any analyst mentions at this stage.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+        <div class="step-body">
+          <h3>Review and confirm the content plan</h3>
+          <p>The skill will show you what it's working with before generating — flagging what it found, what's uncertain, and any fields that need your input. You can redirect or add context here before it writes the card.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-line"></div>
+        <div class="step-body">
+          <h3>Download the .docx</h3>
+          <p>The output is a formatted Word document — landscape orientation, Applause brand colors, all standard battlecard sections (Offensive table, Defensive table, Company Overview, Win Stories, Call to Action). Open in Word and Export → PDF if needed for sharing.</p>
+          <div class="note"><strong>Note:</strong> Always review cards generated from web research before sending to reps. Fields marked <span class="hl">[unverified]</span> or <span class="hl">[TBD]</span> need a human check first.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── Card types ── -->
+  <section class="section" id="cards">
+    <div class="section-label">Card types</div>
+    <h2>Three card formats, one skill</h2>
+    <p>The skill automatically picks the right format based on your request. Here's what each one produces:</p>
+
+    <div class="card-types">
+      <div class="card-type">
+        <span class="card-type-badge badge-blue">Competitor card</span>
+        <h3>One specific company</h3>
+        <p>Full profile on a single competitor — their pitch, weaknesses, how to beat them, and how to handle their strengths.</p>
+        <ul>
+          <li>Company overview</li>
+          <li>Offensive table (4–6 rows)</li>
+          <li>Defensive table (3–4 rows)</li>
+          <li>Win stories</li>
+          <li>Discovery questions</li>
+          <li>CTA for reps</li>
+        </ul>
+      </div>
+      <div class="card-type">
+        <span class="card-type-badge badge-aqua">Solution card</span>
+        <h3>A testing domain</h3>
+        <p>Landscape view of all competitors in a solution area — accessibility, payments, crowdtesting, AI testing, etc.</p>
+        <ul>
+          <li>Industry players table</li>
+          <li>Category-level offense</li>
+          <li>Category-level defense</li>
+          <li>Applause's position</li>
+          <li>Key differentiators</li>
+        </ul>
+      </div>
+      <div class="card-type">
+        <span class="card-type-badge badge-gold">Hybrid card</span>
+        <h3>Unknown competitor</h3>
+        <p>Researched from scratch. Combines a competitor profile with solution-area context so reps have the full picture.</p>
+        <ul>
+          <li>Web-researched profile</li>
+          <li>Solution area landscape</li>
+          <li>Confidence markers</li>
+          <li>Cowork recommendation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── Intel feed ── -->
+  <section class="section" id="intel">
+    <div class="section-label">Intel feed</div>
+    <h2>How the competitive scan feeds every card</h2>
+    <p>We run an automated weekly scan every Monday that monitors 10+ competitors across messaging, product launches, blog posts, analyst recognition, and press releases. Results publish to our competitive intel site and are automatically pulled into every card the skill generates.</p>
+    <p>The intel appears at the top of the content column as a high-visibility table — signal level, scan date, and finding — so reps know exactly what's changed before they walk into a call.</p>
+
+    <div class="intel-demo">
+      <div class="intel-demo-hdr">⚡ COMPETITIVE INTEL — LATEST UPDATES</div>
+      <div class="intel-demo-row">
+        <span class="intel-signal">🔴 High</span>
+        <span class="intel-date">May 18, 2026</span>
+        <span class="intel-finding">AI Chatbot Testing launched April 16 — human-led, 4-domain risk framework. Hallmark+ among first enterprise adopters.</span>
+      </div>
+      <div class="intel-demo-row">
+        <span class="intel-signal">🔴 High</span>
+        <span class="intel-date">May 18, 2026</span>
+        <span class="intel-finding">CEO keynoted STAREAST: "What Does Quality Mean for AI Testing?" Press release: "Testlio Accelerates Growth as AI Testing Demand Surges."</span>
+      </div>
+      <div class="intel-demo-row">
+        <span class="intel-signal">⚠️ New</span>
+        <span class="intel-date">May 11, 2026</span>
+        <span class="intel-finding">Baseline scan established. Homepage JS-SPA — content via search and PR coverage only.</span>
+      </div>
+    </div>
+
+    <p style="margin-top: 16px;">Tracked competitors include: Testlio, Testbirds, UserTesting, Qualitest, QualityLogic, Test IO (EPAM), Global App Testing, UNGUESS, Level Access, and Fable. Signal levels: 🔴 High = material move requiring card update; 🟡 Medium = notable but not urgent; 🟢 Low = no change.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── Unknown competitors ── -->
+  <section class="section" id="unknown">
+    <div class="section-label">Unknown competitors</div>
+    <h2>What happens when we don't have intel</h2>
+    <p>If a rep mentions a company that isn't in our corpus — or you spot a new name in a deal — the skill doesn't stop. It automatically runs a research flow:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+        <div class="step-body">
+          <h3>Web research the company</h3>
+          <p>Searches their homepage, LinkedIn, recent press, G2/Capterra reviews, and any analyst mentions. Populates all standard card fields from public sources.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+        <div class="step-body">
+          <h3>Scan the full Cowork archive</h3>
+          <p>Checks all historical scan reports for any passing mention of the company — even in cross-competitor themes or footnotes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+        <div class="step-body">
+          <h3>Classify the solution area</h3>
+          <p>Determines where they compete (accessibility, payments, crowdtesting, AI testing, etc.) and pulls in the relevant solution-area landscape automatically.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-line"></div>
+        <div class="step-body">
+          <h3>Build a hybrid card</h3>
+          <p>Outputs a full competitor card plus a "How [Company] fits the [Solution Area] landscape" section — giving reps both the specific intel and the broader competitive context. All unverified fields are flagged clearly. The skill also recommends adding the company to the weekly scan going forward.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── Tips ── -->
+  <section class="section" id="tips">
+    <div class="section-label">Tips</div>
+    <h2>Getting the most out of it</h2>
+
+    <div class="tips">
+      <div class="tip">
+        <span class="tip-icon">🎯</span>
+        <div class="tip-body"><strong>Be specific about solution context.</strong> "Build a Testlio battlecard for an accessibility testing conversation" gives you a card with both the Testlio-specific intel and the accessibility landscape overlaid — more useful than a generic card.</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">🔄</span>
+        <div class="tip-body"><strong>Refresh after 🔴 High signal weeks.</strong> When the weekly scan surfaces a major competitor move — a product launch, acquisition, or messaging shift — trigger a card refresh. The skill will flag exactly what changed and where it affects positioning.</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">✏️</span>
+        <div class="tip-body"><strong>Win stories need you.</strong> The card generates everything it can from available data, but win/loss stories have to come from the field. Use the TBD placeholder as a prompt to fill in a real example — even one strong story changes how reps use the card.</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">🔍</span>
+        <div class="tip-body"><strong>Unknown ≠ unimportant.</strong> If a rep keeps mentioning a company you've never tracked, that's a signal. Ask the skill to research and build a card — and add them to the Cowork scan so future cards get live intel instead of web research.</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">⚠️</span>
+        <div class="tip-body"><strong>Review [unverified] fields before field use.</strong> Cards generated from web research are clearly marked. The content is useful as a starting point, but treat it as a draft until a human has confirmed the key facts — especially revenue, employee count, and customer claims.</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">📬</span>
+        <div class="tip-body"><strong>Nominate wins and losses.</strong> The Call to Action on every card asks reps to submit wins and losses to Sales Enablement. That feedback loop is what keeps the cards honest and sharp over time.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Owner ── -->
+  <div class="owner-section" id="contact">
+    <div class="section-label">Maintained by</div>
+    <div class="owner-card">
+      <div class="owner-avatar">DP</div>
+      <div class="owner-info">
+        <div class="owner-name">Dana Prey</div>
+        <div class="owner-role">Product Marketing Manager · Applause</div>
+        <div class="owner-links">
+          <a href="https://claude.ai" target="_blank" class="owner-link primary">Open Battlecard Builder in Claude ↗</a>
+          <a href="mailto:dprey@applause.com" class="owner-link">dprey@applause.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <span class="footer-brand">APPLAUSE°</span>
+  <span class="footer-meta">Battlecard Builder · Maintained by Dana Prey · Internal use only · dprey@applause.com</span>
+</footer>
+
+</body>
+</html>
