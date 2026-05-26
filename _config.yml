@@ -1,7 +1,7 @@
 ﻿title: QA Competitive Intel
 description: "Weekly monitoring of Testlio, Testbirds, UserTesting, Qualitest, QualityLogic, Test IO (EPAM), Global App Testing, UNGUESS, Level Access, Fable."
 theme: minima
-
+header_pages: []
 
 minima:
   skin: auto  # respects OS dark/light mode
