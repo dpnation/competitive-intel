@@ -1,0 +1,105 @@
+# Competitive Digest — 2026-05-25
+
+## Summary
+Moderate signal week. The biggest activity centers on **Level Access**, whose GAAD 2026 campaign crested on May 21 with a press release, 20%-off Academy training through May 31, and newly confirmed platform agent enhancements. **Testlio** required two baseline corrections this run: CEO Summer Weisberg (appointed February 3, 2026) and the LeoInsights™ product launch (January 21, 2026) were both absent from the prior snapshot. **UserTesting** has the Crafted Seattle event landing May 28. The remaining seven competitors show low or no change versus last week's baseline.
+
+---
+
+## Competitor Updates
+
+### Testlio
+**Signal level:** 🟡 Medium (baseline correction)
+**URLs checked:** https://testlio.com/news/, search results for Testlio May 2026
+**Changes noted:**
+- **CEO correction:** Summer Weisberg was formally appointed CEO on February 3, 2026. Previous baseline incorrectly referenced founder Kristel Kruustük in the CEO role; Kristel delivered the STAREAST keynote as founder, not current CEO. Summer joined Testlio in 2020, served as COO and then Interim CEO before this appointment.
+- **LeoInsights™ correction:** Launched January 21, 2026 — this product was absent from the prior baseline. LeoInsights is an AI-powered QA analytics layer within the LeoAI Engine™ that converts fragmented testing data into executive-ready summaries and benchmarks. Key claim: 90% reduction in time spent preparing executive QA reports. Rush Street Interactive cited 30% faster release cycles.
+- **Event activity:** VP EMEA/APAC Tom Chmielewski at dLocal event (May 20) on APM testing in complex markets — consistent with ongoing conference push.
+- No new product launches identified specifically in May 18–25 window.
+
+### Testbirds
+**Signal level:** ⚪ No change
+**URLs checked:** https://www.testbirds.com/en/, https://www.testbirds.com/en/services/, newsroom search
+**Changes noted:**
+- No new product announcements, messaging changes, or press releases found since May 11 baseline.
+- Content strategy unchanged: EU Withdrawal Button blog (June 19 compliance deadline), PCI-DSS v4.0.1 certification, Gartner recognition, and AI & Agent Readiness positioning remain the primary signals.
+- Baseline is current.
+
+### UserTesting
+**Signal level:** 🟡 Medium
+**URLs checked:** https://www.usertesting.com/, https://www.usertesting.com/plans, https://www.usertesting.com/research-week-2026, Crafted event pages
+**Changes noted:**
+- **Research Week 2026 concluded (May 11–15):** Event focused on agentic AI and conversational interfaces reshaping products. Joint "Insight Oasis" showcase with User Interviews — reinforcing the January 2026 acquisition integration story.
+- **Crafted Seattle — May 28, 2026 (this Thursday):** Flagship in-person event at Victory Hall, Seattle. Afternoon programming is free; morning workshops are $499. London date confirmed for September 17, 2026. This is the first year of the Crafted event brand (rebranded from "Human Insight Summit").
+- No pricing changes or new product features identified beyond the April 2026 release already in baseline.
+
+### Qualitest
+**Signal level:** 🟢 Low (baseline correction)
+**URLs checked:** https://www.qualitestgroup.com/, https://www.qualitestgroup.com/news-center/, search results
+**Changes noted:**
+- **CEO correction:** Andrew Duncan joined as CEO effective July 1, 2025 (announced June/July 2025). He brings 30+ years of experience; most recently Global CEO of Infosys Consulting. Previous CEO Anbu Muppidathi stepped down following completion of his four-year contract. Baseline did not include the CEO name — this is an additive correction.
+- No new product launches, messaging changes, or press releases found in the May 18–25 window.
+- SAP Sapphire 2026 (Orlando + Madrid) participation is ongoing and consistent with prior baseline.
+
+### QualityLogic
+**Signal level:** ⚪ No change
+**URLs checked:** https://www.qualitylogic.com/, https://www.qualitylogic.com/knowledge-center/, search results
+**Changes noted:**
+- No May 2026 "Quality Trail" newsletter found yet (most recent indexed is April 2026). May edition may be pending publication.
+- DER testing webinar (May 14) aligns with previously tracked Smart Energy content track.
+- No new service launches, messaging changes, or major announcements found.
+- Baseline is current.
+
+### Test IO
+**Signal level:** ⚪ No change
+**URLs checked:** https://test.io/, https://solutionshub.epam.com/solution/test-io, search results
+**Changes noted:**
+- No new announcements found in the May 18–25 window.
+- EPAM Agentic QA™ positioning and "Code to Value. Fast." brand identity continue unchanged.
+- Baseline is current.
+
+### Global App Testing
+**Signal level:** 🟢 Low
+**URLs checked:** https://www.globalapptesting.com/, https://www.globalapptesting.com/news, search results
+**Changes noted:**
+- **Active blog content on AI testing:** Several posts published in May 2026 including "How to evaluate a product with a non-deterministic output" (May 12), "What responsible AI testing looks like in practice," and "Human-in-the-loop AI for responsible AI validation." This confirms deepening content investment around AI evaluation, consistent with the March 2026 GroundTruth AI product launch.
+- No new product launches or pricing changes found beyond the March 2026 GroundTruth AI announcement (already in baseline).
+- Messaging and strategic positioning unchanged.
+
+### UNGUESS
+**Signal level:** ⚪ No change
+**URLs checked:** https://unguess.io/, https://blog.unguess.io/, search results
+**Changes noted:**
+- No new announcements, blog posts, or press releases found for May 2026.
+- GitHub activity noted on May 5 (platform/code updates), but no public-facing product announcement.
+- Baseline is current.
+
+### Level Access
+**Signal level:** 🔴 High
+**URLs checked:** https://www.levelaccess.com/, https://www.levelaccess.com/news/, https://www.levelaccess.com/gaad/, Business Wire press release
+**Changes noted:**
+- **GAAD 2026 campaign (peaked this week):** Global Accessibility Awareness Day fell on May 21. Level Access published a press release on May 14 (Business Wire) and activated the full GAAD campaign. Key elements: 20% off all Academy individual training plans through May 31; three free full-year Academy subscriptions via a giveaway contest; tailored GAAD Celebration Toolkit for enterprise accessibility champions.
+- **Platform agent enhancements confirmed:** The Level Access platform now includes (a) a Reporting Agent upgraded to support open-prompt conversational reporting — not limited to pre-selected topics; (b) a Prioritization Agent accessible directly from the Digital Asset Findings page for streamlined remediation planning; (c) a UI navigation change — vertical nav is now the default (horizontal available until July 2026). Additionally, duplicate/related findings from different Access Engine scan versions are now deduped in dashboards and reports.
+- **Research cited:** New survey data: 91% of respondents report UX improvements, 90% cite customer satisfaction gains, 88% cite brand reputation improvement from digital accessibility investment — used in GAAD messaging.
+- These platform updates mark a meaningful acceleration in Level Access's AI-powered platform story (Reporting Agent + Prioritization Agent are AI-driven), moving beyond their prior positioning of pure compliance/scanning.
+
+### Fable
+**Signal level:** ⚪ No change
+**URLs checked:** https://makeitfable.com/, https://makeitfable.com/about-fable/news/, search results
+**Changes noted:**
+- No new press releases or product announcements found for May 2026.
+- Most recent content remains the Mozilla "Designing beyond the checklist" piece (March 2026) and ongoing Salesforce/Agentforce partnership content.
+- Baseline is current.
+
+---
+
+## Fetch errors
+- None. All searches completed successfully. Note: Testlio, Test IO, and UNGUESS homepages are JS-rendered SPAs and were researched via web search and press coverage rather than direct page fetch — consistent with prior methodology.
+
+---
+
+## Notes
+- **Level Access is expanding its AI platform story fast.** The Reporting Agent and Prioritization Agent additions place Level Access meaningfully ahead of Fable in the "AI-powered accessibility tools" conversation — this is a differentiation Applause should be aware of when competing in the accessibility testing space.
+- **Testlio's baseline had two material gaps** (CEO + LeoInsights™) that are corrected in this run. Both items date to early 2026 and should be reflected in any active battlecard or competitive brief.
+- **UserTesting Crafted Seattle (May 28)** is worth monitoring — any announcements made on-stage could shift their positioning narrative. Check for post-event press releases next week.
+- **Qualitest CEO change (July 2025)** is now confirmed and added to the baseline. Andrew Duncan's Infosys Consulting background suggests stronger enterprise services push; worth watching for any strategy shift in coming months.
+- No new URLs to add to tracking this run.
