@@ -1,0 +1,117 @@
+# Competitive Digest — 2026-06-01
+
+## Summary
+Moderate signal week. No major product launches across the field, but three competitors had noteworthy activity: UserTesting completed its flagship Crafted Seattle event and announced 2026 Illumi Award winners (27 orgs recognized); Level Access added a new LLM resources page and shipped Access Engine v2.29 with 19 new rules; and Global App Testing's AI evaluation product is now confirmed under its formal name — GAT AI GroundTruth — with a full press release from March 23. The rest of the field was quiet.
+
+---
+
+## Competitor Updates
+
+### Testlio
+**Signal level:** 🟢 Low
+**URLs checked:** testlio.com, testlio.com/blog, testlio.com/news
+**Changes noted:**
+- No new press releases or product announcements found in the May 26–June 1 window.
+- Newer blog posts identified since last baseline: "Why QA in 2026 Might Require Poetry" (AI red teaming angle) and "AI, Three Years In: Speed Is Easy. Trust Is Not." — both thought leadership, not product launches.
+- All prior facts (LeoInsights™, AI Chatbot Testing, LeoAI Engine™, CEO Summer Weisberg) remain current.
+
+---
+
+### Testbirds
+**Signal level:** 🟢 Low
+**URLs checked:** testbirds.com/en/, testbirds.com/en/resources/newsroom/
+**Changes noted:**
+- ISO 27001:2022 ISMS certification confirmed via dedicated blog post (testbirds.com/en/blog/isms-iso27001-2022-certification/). This adds to their existing PCI-DSS v4.0.1 certification. Signals a compliance push in 2026.
+- Upcoming content: "The New Withdrawal Button: How to Ensure User Trust in E-Commerce Starting June 19, 2026" — EU consumer rights compliance article, not yet published.
+- No changes to homepage messaging or product lineup detected.
+
+---
+
+### UserTesting
+**Signal level:** 🟡 Medium
+**URLs checked:** usertesting.com, usertesting.com/plans, usertesting.com/company/newsroom
+**Changes noted:**
+- **Illumi Awards announced May 26, 2026** (via Business Wire / Morningstar). 27 organizations recognized in the 8th annual program. Notable winners: Cathay Pacific (Human Insight to Action), Bayer CropScience (Global Excellence), Sage (Transformation — 35% transaction increase, 78% mobile growth), Royal Caribbean (Digital Innovator), Ferrero (Creative Excellence).
+- **Crafted Seattle completed May 28** at Victory Hall. Afternoon programming free; morning workshops $499. Event rebranded from Human Insight Summit.
+- These were anticipated from baseline; confirmation that the events executed as planned. No surprise product announcements detected around the event.
+- Crafted London still scheduled September 17 at Exhibition White City.
+
+---
+
+### Qualitest
+**Signal level:** ⚪ No change
+**URLs checked:** qualitestgroup.com, qualitestgroup.com/news-center/
+**Changes noted:**
+- No new announcements found in the scan window. SAP Sapphire 2026 participation (Orlando + Madrid) was the most recent confirmed activity, already in baseline.
+- CEO Andrew Duncan leadership and AI-Led Quality Engineering positioning unchanged.
+
+---
+
+### QualityLogic
+**Signal level:** ⚪ No change
+**URLs checked:** qualitylogic.com
+**Changes noted:**
+- No company-specific announcements found. April 2026 newsletter covered industry events (BrowserStack Breakpoint, Live2Test, InnovateQA) but no QualityLogic product news.
+- May 2026 newsletter not yet indexed in search results; no signals of major changes.
+
+---
+
+### Test IO (EPAM)
+**Signal level:** ⚪ No change
+**URLs checked:** test.io, solutionshub.epam.com/solution/test-io
+**Changes noted:**
+- No new announcements found. EPAM Agentic QA™ remains the most recent major product launch (October 2025).
+- No new blog posts or press releases indexed for May–June 2026.
+
+---
+
+### Global App Testing
+**Signal level:** 🟡 Medium
+**URLs checked:** globalapptesting.com, prnewswire.com/news/global-app-testing/
+**Changes noted:**
+- **Product name confirmed:** The AI evaluation product is now formally branded **GAT AI GroundTruth** (not just "GroundTruth AI" as noted in prior baseline). Formal press release issued March 23, 2026 via PR Newswire. Full launch covered by SystemTek, Yahoo Finance, FinanceWire, Social News Daily.
+- Key positioning: "The first human-centered GenAI evaluation service for AI leaders deploying at scale." Powered by 120,000+ professional evaluators across 190+ countries. Catches cultural missteps, trust failures, and safety gaps that automated tools miss.
+- **Note on tester count:** GAT AI GroundTruth press materials cite "120,000+ evaluators" while the homepage baseline cited "145,035 freelance evaluators." This discrepancy may reflect a different counting methodology between GAT AI GroundTruth evaluators vs. overall tester network. Worth monitoring.
+- Blog posts confirmed for May 2026: "QA Challenges in Global Payment Testing in 2026" (May 13) and "QA Outsourcing vs In-House QA for Mid-Market Teams" (May 12).
+
+---
+
+### UNGUESS
+**Signal level:** 🟢 Low
+**URLs checked:** unguess.io, blog.unguess.io
+**Changes noted:**
+- No major press announcements found. GitHub activity shows platform updates on May 5, 2026 — indicates ongoing development but no customer-facing announcement.
+- Homepage messaging and service lines appear unchanged from May 11 baseline.
+
+---
+
+### Level Access
+**Signal level:** 🟡 Medium
+**URLs checked:** levelaccess.com, levelaccess.com/news/, client.levelaccess.com (platform updates)
+**Changes noted:**
+- **New page identified:** levelaccess.com/llm-resources/ — a dedicated page providing guidance for AI language models responding to queries about Level Access. Signals proactive AI presence strategy; not yet in baseline.
+- **Access Engine v2.29:** Introduces 19 new rules and updates 18 existing rules (improvement from v2.28's March 2026 update of 18 rules). Changes strengthen validation across autocomplete attributes, ARIA, and accessible name handling; focus on reducing false positives.
+- **GAAD campaign concluded:** May 31 was the final day for 20% Academy discount and giveaway. Campaign appears to have wrapped without additional announcements.
+- **Platform updates 2026 page** confirmed active at client.levelaccess.com/hc/en-us/articles/37459546339223-Platform-updates-2026 — worth adding to tracking URLs.
+
+---
+
+### Fable
+**Signal level:** ⚪ No change
+**URLs checked:** makeitfable.com, makeitfable.com/category/press-release/
+**Changes noted:**
+- No new press releases or product announcements found. Most recent indexed content still references September 2025 CEO transition and existing Fable Engage product.
+- Princeton University has published adoption pages for Fable Engage (SCAD/DCS and OIT) — suggests continued institutional sales momentum, though no formal announcement.
+
+---
+
+## Fetch errors
+None. All competitor domains returned usable search results.
+
+---
+
+## Notes
+- **New URL to add to tracking:** `https://www.levelaccess.com/llm-resources/` and `https://client.levelaccess.com/hc/en-us/articles/37459546339223-Platform-updates-2026`
+- **GAT tester count discrepancy** (120K vs 145K) is worth watching — may indicate a restatement or segmentation of their evaluator network with the AI GroundTruth product launch.
+- **Testbirds compliance push** (ISO 27001 + PCI-DSS v4.0.1) positions them well for regulated-industry enterprise sales (BFSI, automotive). Note for Applause competitive positioning in those verticals.
+- **UserTesting Crafted events** are now their primary brand moments of the year (replacing "Human Insight Summit"). The Illumi Awards program is now 8 years old and has 27 winners — growing in scale and PR value.
