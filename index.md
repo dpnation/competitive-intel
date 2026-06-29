@@ -16,13 +16,8 @@ Weekly competitive intelligence on QA/testing vendors. Scans run every Monday an
 |------|---------------|
 | [June 29, 2026](reports/2026-06-29) | Qualitest rebrands to QualityAI; Level Access joins Microsoft Marketplace |
 | [June 15, 2026](reports/2026-06-15) | UNGUESS acquires Testbirds — pan-European crowdtesting consolidation; Level Access adds MCP IDE integration for AI-generated accessibility fixes |
-| [June 29, 2026](reports/2026-06-29) | Qualitest rebrands to QualityAI; Level Access joins Microsoft Marketplace |
 | [June 8, 2026](reports/2026-06-08) | Testlio launches AI Agent Testing at Money20/20 Europe; UserTesting software update study |
-| [June 29, 2026](reports/2026-06-29) | Qualitest rebrands to QualityAI; Level Access joins Microsoft Marketplace |
 | [June 1, 2026](reports/2026-06-01) | UserTesting Illumi Awards + Crafted Seattle; Level Access v2.29 + LLM resources page; GAT AI GroundTruth formally named |
-| [June 29, 2026](reports/2026-06-29) | Qualitest rebrands to QualityAI; Level Access joins Microsoft Marketplace |
 | [May 25, 2026](reports/2026-05-25) | Level Access GAAD 2026 peak week; Testlio CEO + LeoInsights™ baseline corrections; UserTesting Crafted Seattle May 28 |
-| [June 29, 2026](reports/2026-06-29) | Qualitest rebrands to QualityAI; Level Access joins Microsoft Marketplace |
 | [May 18, 2026](reports/2026-05-18) | Testlio launches AI Chatbot Testing; UserTesting acquires User Interviews; Level Access & Fable added |
-| [June 29, 2026](reports/2026-06-29) | Qualitest rebrands to QualityAI; Level Access joins Microsoft Marketplace |
 | [May 11, 2026](reports/2026-05-11) | First capture — GAT launches GroundTruth AI; AI narrative dominates all competitors; UserTesting earns Forrester Wave Leader |
