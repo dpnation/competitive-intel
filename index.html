@@ -65,11 +65,25 @@
 
   nav.sidebar {
     width: 300px; flex-shrink: 0; background: #fff; border-right: 1px solid var(--gray-200);
-    overflow-y: auto; padding: 14px 0;
+    overflow-y: auto; padding: 0 0 14px;
   }
+  .tab-bar {
+    display: flex; border-bottom: 1px solid var(--gray-200); position: sticky; top: 0;
+    background: #fff; z-index: 1;
+  }
+  .tab-btn {
+    flex: 1; background: none; border: none; cursor: pointer; font-family: var(--font-primary);
+    font-size: 0.78rem; font-weight: 700; color: var(--gray-400); padding: 12px 8px;
+    border-bottom: 3px solid transparent;
+  }
+  .tab-btn:hover { color: var(--blue-700); }
+  .tab-btn.active { color: var(--blue-700); border-bottom-color: var(--blue-500); }
   nav.sidebar .sidebar-heading {
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-400);
-    padding: 4px 20px 10px; font-weight: 700;
+    padding: 14px 20px 10px; font-weight: 700;
+  }
+  .empty-state {
+    padding: 20px; font-size: 0.82rem; color: var(--gray-400); line-height: 1.5;
   }
   .report-item {
     display: block; width: 100%; text-align: left; background: none; border: none;
@@ -188,9 +202,15 @@
   </div>
 
   <div class="layout">
-    <nav class="sidebar" id="sidebar"></nav>
+    <nav class="sidebar" id="sidebar">
+      <div class="tab-bar">
+        <button class="tab-btn" id="tabDigests" onclick="selectTab('digests')">Weekly Digests</button>
+        <button class="tab-btn" id="tabDiscovery" onclick="selectTab('discovery')">Discovery Candidates</button>
+      </div>
+      <div id="sidebarList"></div>
+    </nav>
     <main class="content">
-      <div class="legend">
+      <div class="legend" id="legend">
         <span>🔴 High signal</span>
         <span>🟡 Medium signal</span>
         <span>🟢 Low signal</span>
@@ -201,7 +221,7 @@
   </div>
 
   <footer class="foot">
-    Applause Competitive Intelligence · automated weekly scan of the QA &amp; digital quality testing landscape
+    Applause Competitive Intelligence · automated weekly scan of known competitors (Mondays) plus a weekly discovery scan for new/emerging entrants (Tuesdays)
   </footer>
 </div>
 
@@ -1154,6 +1174,16 @@ UNGUESS is the only one explicitly offering it, but the Bug Bounty / Ethical Hac
 ];
 
 // ---------------------------------------------------------------------------
+// DISCOVERY DATA — new/emerging competitor candidates spotted by the weekly
+// discovery scan (Tuesdays). Newest first. Rebuilt in full from the
+// discovery/ folder every time publish.ps1 runs — do not hand-edit.
+// Separate from REPORTS: this tracks *candidates*, not confirmed, fully
+// tracked competitors (those live in competitors.json / REPORTS above).
+// ---------------------------------------------------------------------------
+const DISCOVERY = [
+];
+
+// ---------------------------------------------------------------------------
 // Markdown → HTML (lightweight, purpose-built for these digest files)
 // ---------------------------------------------------------------------------
 function escapeHtml(s) {
@@ -1199,7 +1229,14 @@ function mdToHtml(md) {
 // ---------------------------------------------------------------------------
 // Render
 // ---------------------------------------------------------------------------
+let activeTab = 'digests';
+
+function currentDataset() {
+  return activeTab === 'digests' ? REPORTS : DISCOVERY;
+}
+
 function formatUpdatedPill() {
+  if (!REPORTS.length) return;
   const newest = REPORTS[0];
   const d = new Date(newest.date + 'T00:00:00');
   const opts = { month: 'short', day: 'numeric', year: 'numeric' };
@@ -1207,39 +1244,73 @@ function formatUpdatedPill() {
 }
 
 function renderSidebar(selectedDate) {
-  const nav = document.getElementById('sidebar');
-  nav.innerHTML = '';
+  document.getElementById('tabDigests').className = 'tab-btn' + (activeTab === 'digests' ? ' active' : '');
+  document.getElementById('tabDiscovery').className = 'tab-btn' + (activeTab === 'discovery' ? ' active' : '');
+  document.getElementById('legend').style.display = activeTab === 'digests' ? 'flex' : 'none';
+
+  const dataset = currentDataset();
+  const list = document.getElementById('sidebarList');
+  list.innerHTML = '';
+
   const heading = document.createElement('div');
   heading.className = 'sidebar-heading';
-  heading.textContent = REPORTS.length + ' reports · newest first';
-  nav.appendChild(heading);
+  heading.textContent = activeTab === 'digests'
+    ? dataset.length + ' reports · newest first'
+    : dataset.length + ' scans · newest first';
+  list.appendChild(heading);
 
-  REPORTS.forEach((r, i) => {
+  if (!dataset.length) {
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = activeTab === 'digests'
+      ? 'No digests yet.'
+      : 'No discovery scans yet — the first weekly scan for new/emerging competitors runs every Tuesday. Candidates that match Applause\'s testing & AI evaluation space will show up here.';
+    list.appendChild(empty);
+    document.getElementById('reportBody').innerHTML = '';
+    return;
+  }
+
+  dataset.forEach((r) => {
     const btn = document.createElement('button');
     btn.className = 'report-item' + (r.date === selectedDate ? ' active' : '');
     btn.innerHTML = '<div class="r-date">' + r.label + '</div><div class="r-highlight">' + r.highlight + '</div>';
     btn.addEventListener('click', () => selectReport(r.date));
-    nav.appendChild(btn);
+    list.appendChild(btn);
 
     // known gap in the weekly cadence
-    if (r.date === '2026-06-29') {
+    if (activeTab === 'digests' && r.date === '2026-06-29') {
       const gap = document.createElement('div');
       gap.className = 'gap-note';
       gap.textContent = 'No digest for week of Jun 22 (scan skipped)';
-      nav.appendChild(gap);
+      list.appendChild(gap);
     }
   });
 }
 
 function selectReport(date) {
-  const report = REPORTS.find(r => r.date === date) || REPORTS[0];
+  const dataset = currentDataset();
+  const report = dataset.find(r => r.date === date) || dataset[0];
   document.getElementById('reportBody').innerHTML = mdToHtml(report.md);
   renderSidebar(report.date);
   window.scrollTo(0, 0);
 }
 
+function selectTab(tab) {
+  activeTab = tab;
+  const dataset = currentDataset();
+  if (dataset.length) {
+    selectReport(dataset[0].date);
+  } else {
+    renderSidebar(null);
+  }
+}
+
 formatUpdatedPill();
-selectReport(REPORTS[0].date);
+if (REPORTS.length) {
+  selectReport(REPORTS[0].date);
+} else {
+  renderSidebar(null);
+}
 </script>
 </body>
 </html>
