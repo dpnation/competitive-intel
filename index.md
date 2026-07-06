@@ -2,9 +2,14 @@
 layout: page
 title: QA Competitive Intelligence
 ---
+<<<<<<< Updated upstream
 Weekly competitive intelligence on QA/testing vendors. Scans run every Monday and are published here automatically.
+=======
 
-**Competitors tracked:** Testlio · Testbirds · UserTesting · Qualitest · QualityLogic · Test IO (EPAM) · Global App Testing · UNGUESS · Level Access · Fable
+Weekly competitive intelligence on 10 QA/testing vendors. Scans run every Monday and are published here automatically.
+>>>>>>> Stashed changes
+
+**Competitors tracked:** Testlio · Testbirds · UserTesting · Qualitest / QualityAI · QualityLogic · Test IO (EPAM) · Global App Testing · UNGUESS · Level Access · Fable
 
 **Focus areas:** Messaging & positioning · Product/feature launches · Blog & press releases · Analyst recognition
 
@@ -14,6 +19,7 @@ Weekly competitive intelligence on QA/testing vendors. Scans run every Monday an
 
 | Week | Key Highlights |
 |------|---------------|
+<<<<<<< Updated upstream
 | [June 29, 2026](reports/2026-06-29) | Qualitest rebrands to QualityAI; Level Access joins Microsoft Marketplace |
 | [June 15, 2026](reports/2026-06-15) | UNGUESS acquires Testbirds — pan-European crowdtesting consolidation; Level Access adds MCP IDE integration for AI-generated accessibility fixes |
 | [June 8, 2026](reports/2026-06-08) | Testlio launches AI Agent Testing at Money20/20 Europe; UserTesting software update study |
@@ -21,3 +27,13 @@ Weekly competitive intelligence on QA/testing vendors. Scans run every Monday an
 | [May 25, 2026](reports/2026-05-25) | Level Access GAAD 2026 peak week; Testlio CEO + LeoInsights™ baseline corrections; UserTesting Crafted Seattle May 28 |
 | [May 18, 2026](reports/2026-05-18) | Testlio launches AI Chatbot Testing; UserTesting acquires User Interviews; Level Access & Fable added |
 | [May 11, 2026](reports/2026-05-11) | First capture — GAT launches GroundTruth AI; AI narrative dominates all competitors; UserTesting earns Forrester Wave Leader |
+=======
+| [July 6, 2026](reports/2026-07-06) | Quiet week overall â€” the quietest in the last several digest cycles. No rebrands, acquisitions, or major product launches landed in the... |
+| [June 29, 2026](reports/2026-06-29) | Testlio backfilled CTPO appointment (Darin Brown, May 6, 2026) |
+| [June 15, 2026](reports/2026-06-15) | Routine positioning and blog monitoring — no major moves |
+| [June 8, 2026](reports/2026-06-08) | Routine positioning and blog monitoring — no major moves |
+| [June 1, 2026](reports/2026-06-01) | Routine positioning and blog monitoring — no major moves |
+| [May 25, 2026](reports/2026-05-25) | Routine positioning and blog monitoring — no major moves |
+| [May 18, 2026](reports/2026-05-18) | Routine positioning and blog monitoring — no major moves |
+| [May 11, 2026](reports/2026-05-11) | Baseline scan established across all 10 tracked competitors |
+>>>>>>> Stashed changes
