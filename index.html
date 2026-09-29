@@ -59,7 +59,22 @@
   .competitor-strip .chip {
     background: #fff; border: 1px solid #cfe3f0; color: var(--blue-700);
     padding: 3px 10px; border-radius: 12px; font-weight: 500;
+    transition: opacity 0.15s ease;
   }
+  .competitor-strip .chip.dimmed { opacity: 0.32; }
+  .competitor-strip .group-sep { width: 1px; align-self: stretch; background: #cfe3f0; margin: 0 2px; }
+
+  .subtab-bar {
+    display: flex; gap: 6px; padding: 10px 14px 0; background: #fff;
+  }
+  .subtab-btn {
+    font-family: var(--font-primary); font-size: 0.74rem; font-weight: 700;
+    padding: 6px 12px; border: 1px solid var(--gray-200); border-bottom: none;
+    border-radius: 6px 6px 0 0; background: var(--blue-50); color: var(--gray-400);
+    cursor: pointer;
+  }
+  .subtab-btn.active { background: var(--blue-100); color: var(--blue-700); }
+  .subtab-btn:hover:not(.active) { color: var(--blue-500); }
 
   .layout { display: flex; flex: 1; min-height: 0; }
 
@@ -189,16 +204,25 @@
 
   <div class="competitor-strip">
     <span class="label">Tracking:</span>
-    <span class="chip">Testlio</span>
-    <span class="chip">Testbirds</span>
-    <span class="chip">UserTesting</span>
-    <span class="chip">Qualitest / QualityAI</span>
-    <span class="chip">QualityLogic</span>
-    <span class="chip">Test IO (EPAM)</span>
-    <span class="chip">Global App Testing</span>
-    <span class="chip">UNGUESS</span>
-    <span class="chip">Level Access</span>
-    <span class="chip">Fable</span>
+    <span class="chip" data-group="qa">Testlio</span>
+    <span class="chip" data-group="qa">Testbirds</span>
+    <span class="chip" data-group="qa">UserTesting</span>
+    <span class="chip" data-group="qa">Qualitest / QualityAI</span>
+    <span class="chip" data-group="qa">QualityLogic</span>
+    <span class="chip" data-group="qa">Test IO (EPAM)</span>
+    <span class="chip" data-group="qa">Global App Testing</span>
+    <span class="chip" data-group="qa">UNGUESS</span>
+    <span class="chip" data-group="qa">Level Access</span>
+    <span class="chip" data-group="qa">Fable</span>
+    <span class="group-sep"></span>
+    <span class="chip" data-group="ai">Appen</span>
+    <span class="chip" data-group="ai">Braintrust</span>
+    <span class="chip" data-group="ai">Arize AI</span>
+    <span class="chip" data-group="ai">Galileo</span>
+    <span class="chip" data-group="ai">LangSmith</span>
+    <span class="chip" data-group="ai">Innodata</span>
+    <span class="chip" data-group="ai">Centific</span>
+    <span class="chip" data-group="ai">Scale AI</span>
   </div>
 
   <div class="layout">
@@ -206,6 +230,10 @@
       <div class="tab-bar">
         <button class="tab-btn" id="tabDigests" onclick="selectTab('digests')">Weekly Digests</button>
         <button class="tab-btn" id="tabDiscovery" onclick="selectTab('discovery')">Discovery Candidates</button>
+      </div>
+      <div class="subtab-bar" id="subtabBar">
+        <button class="subtab-btn active" id="subtabQa" onclick="setCategoryTab('qa')">QA &amp; Testing</button>
+        <button class="subtab-btn" id="subtabAi" onclick="setCategoryTab('ai')">AI Evaluation</button>
       </div>
       <div id="sidebarList"></div>
     </nav>
@@ -2715,9 +2743,78 @@ function mdToHtml(md) {
 }
 
 // ---------------------------------------------------------------------------
+// QA vs AI Evaluation split — the weekly scan writes ONE combined digest.
+// Within the "Weekly Digests" tab, this is a client-side split of that same
+// markdown: each "### Competitor Name" subsection under "## Competitor
+// Updates" is routed to the AI Evaluation tab if its heading matches a name
+// below, otherwise it stays on QA & Testing. Everything outside "##
+// Competitor Updates" (Summary, Fetch errors, Notes) is shared as-is.
+// Does not apply to the Discovery Candidates tab.
+// ---------------------------------------------------------------------------
+const AI_EVAL_NAMES = ['appen', 'braintrust', 'arize', 'galileo', 'langsmith', 'innodata', 'centific', 'scale ai'];
+
+function headingIsAiEval(headingText) {
+  const t = headingText.toLowerCase();
+  return AI_EVAL_NAMES.some(name => t.includes(name));
+}
+
+function filterMdByTab(md, tab) {
+  const lines = md.replace(/\r\n/g, '\n').split('\n');
+  const out = [];
+  let inCompetitorSection = false;
+  let currentCategory = null; // null | 'qa' | 'ai'
+  let sectionHadAnyHeader = false;
+  let sectionKeptAnyHeader = false;
+
+  for (const line of lines) {
+    const h2 = line.match(/^##\s+(?!#)(.*)/);
+    if (h2) {
+      const isCompetitorHeading = /^competitor updates\s*$/i.test(h2[1].trim());
+      if (isCompetitorHeading) {
+        inCompetitorSection = true;
+        currentCategory = null;
+        out.push(line);
+        continue;
+      } else if (inCompetitorSection) {
+        if (sectionHadAnyHeader && !sectionKeptAnyHeader) {
+          out.push('*No ' + (tab === 'ai' ? 'AI Evaluation Services' : 'QA & Testing Services') + ' competitors had a dedicated entry in this week\'s scan.*');
+          out.push('');
+        }
+        inCompetitorSection = false;
+        currentCategory = null;
+      }
+      out.push(line);
+      continue;
+    }
+
+    if (inCompetitorSection) {
+      const h3 = line.match(/^###\s+(.*)/);
+      if (h3) {
+        sectionHadAnyHeader = true;
+        currentCategory = headingIsAiEval(h3[1]) ? 'ai' : 'qa';
+        if (currentCategory === tab) { sectionKeptAnyHeader = true; out.push(line); }
+        continue;
+      }
+      if (currentCategory === tab) out.push(line);
+      continue;
+    }
+
+    out.push(line);
+  }
+
+  if (inCompetitorSection && sectionHadAnyHeader && !sectionKeptAnyHeader) {
+    out.push('*No ' + (tab === 'ai' ? 'AI Evaluation Services' : 'QA & Testing Services') + ' competitors had a dedicated entry in this week\'s scan.*');
+  }
+
+  return out.join('\n');
+}
+
+// ---------------------------------------------------------------------------
 // Render
 // ---------------------------------------------------------------------------
 let activeTab = 'digests';
+let categoryTab = 'qa';
+let currentReportDate = null;
 
 function currentDataset() {
   return activeTab === 'digests' ? REPORTS : DISCOVERY;
@@ -2735,6 +2832,7 @@ function renderSidebar(selectedDate) {
   document.getElementById('tabDigests').className = 'tab-btn' + (activeTab === 'digests' ? ' active' : '');
   document.getElementById('tabDiscovery').className = 'tab-btn' + (activeTab === 'discovery' ? ' active' : '');
   document.getElementById('legend').style.display = activeTab === 'digests' ? 'flex' : 'none';
+  document.getElementById('subtabBar').style.display = activeTab === 'digests' ? 'flex' : 'none';
 
   const dataset = currentDataset();
   const list = document.getElementById('sidebarList');
@@ -2776,9 +2874,11 @@ function renderSidebar(selectedDate) {
 }
 
 function selectReport(date) {
+  currentReportDate = date;
   const dataset = currentDataset();
   const report = dataset.find(r => r.date === date) || dataset[0];
-  document.getElementById('reportBody').innerHTML = mdToHtml(report.md);
+  const md = (activeTab === 'digests') ? filterMdByTab(report.md, categoryTab) : report.md;
+  document.getElementById('reportBody').innerHTML = mdToHtml(md);
   renderSidebar(report.date);
   window.scrollTo(0, 0);
 }
@@ -2793,7 +2893,22 @@ function selectTab(tab) {
   }
 }
 
+function renderChipDimming() {
+  document.querySelectorAll('.competitor-strip .chip').forEach(chip => {
+    chip.classList.toggle('dimmed', chip.getAttribute('data-group') !== categoryTab);
+  });
+}
+
+function setCategoryTab(tab) {
+  categoryTab = tab;
+  document.getElementById('subtabQa').className = 'subtab-btn' + (tab === 'qa' ? ' active' : '');
+  document.getElementById('subtabAi').className = 'subtab-btn' + (tab === 'ai' ? ' active' : '');
+  renderChipDimming();
+  if (activeTab === 'digests' && currentReportDate) selectReport(currentReportDate);
+}
+
 formatUpdatedPill();
+renderChipDimming();
 if (REPORTS.length) {
   selectReport(REPORTS[0].date);
 } else {
