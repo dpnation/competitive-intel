@@ -263,20 +263,25 @@ const REPORTS = [
 {
   date: "2026-10-12",
   label: "October 12, 2026",
-  highlight: "Quiet-to-moderate week: 2 Medium signals, 0 High, 16 competitors with no confirmed change.",
+  highlight: "Correction 2026-10-13: the first pass missed two OpenAI Partner Network announcements, now both 🔴 High: Testlio (OpenAI Select Partner, Oct 5) and Global App Testing (OpenAI Select Partner, blog Aug 18,...",
   md: `# Competitive Digest — 2026-10-12
 
 ## Summary
 
-Quiet-to-moderate week: 2 Medium signals, 0 High, 16 competitors with no confirmed change. The two notable items are both AI-evaluation moves. **UserTesting's new parent, Auros, launched "AI Relationship Quality" (ARQ)**, its first named AI-evaluation product, about a week after the Sept 29 rebrand. **Scale AI signed an exploratory MoU with Presight** (UAE) on agent evaluation, simulation and governance for mission-critical systems. Everything else either repeats last week's already-reported news (Dynatrace/Arize close, LangSmith Sept 25 release, UserTesting/Auros rebrand) or surfaced nothing new in the last 7 days. Coverage caveat: this run used web search only (no direct page fetches), so "no change" means no new dated news found, not a confirmed page-by-page diff.
+**Correction 2026-10-13:** the first pass missed two OpenAI Partner Network announcements, now both 🔴 High: **Testlio** (OpenAI Select Partner, Oct 5) and **Global App Testing** (OpenAI Select Partner, blog Aug 18, wire Oct 7). Counts below: 2 High, 2 Medium, 14 no change. Two direct crowdtesting-heritage competitors earning an OpenAI credential in the same week is the headline.
+
+Original assessment: quiet-to-moderate week with 2 Medium signals. The two notable items are both AI-evaluation moves. **UserTesting's new parent, Auros, launched "AI Relationship Quality" (ARQ)**, its first named AI-evaluation product, about a week after the Sept 29 rebrand. **Scale AI signed an exploratory MoU with Presight** (UAE) on agent evaluation, simulation and governance for mission-critical systems. Everything else either repeats last week's already-reported news (Dynatrace/Arize close, LangSmith Sept 25 release, UserTesting/Auros rebrand) or surfaced nothing new in the last 7 days. Coverage caveat: this run used web search only (no direct page fetches), so "no change" means no new dated news found, not a confirmed page-by-page diff.
 
 ## Competitor Updates
 
 ### Testlio
-**Signal level:** ⚪ No change
-**URLs checked:** Web search (news/announcements, last 7 days)
+**Signal level:** 🔴 High *(corrected 2026-10-13; originally ⚪ No change — missed in the first pass)*
+**URLs checked:** https://www.testlio.com/blog/testlio-is-now-an-openai-select-partner (fetched, link supplied by Dana)
 **Changes noted:**
-- No new dated activity. Most recent items found are Feb–May 2026 (CEO Summer Weisberg, CTPO Darin Brown, ShopTalk) and already in baseline.
+- **October 5, 2026 (confirmed, Testlio's own blog by Arpita Goala): Testlio is now an OpenAI Select Partner** in the OpenAI Partner Network. Framing: "safe AI experiences cannot exist without the right humans in the loop"; its global community of domain experts provides human-in-the-loop validation of AI products, assistants and agents "in real conditions, across languages and edge cases." Quote from Brad Goldstein, VP of Ecosystem Partnerships, on combining OpenAI's models with Testlio's "real-world testing infrastructure — real devices, real markets, real users." Cites testers upskilled to evaluate output quality, intent resolution, hallucination and bias, plus the LeoCore platform. Copy references GPT-5.6 and ChatGPT Work.
+- **Already captured elsewhere, not previously in a digest:** this was backfilled into \`baseline/testlio.md\` and \`latest-signals.json\` (id \`testlio-openai-partner-2026-10-05\`) on Oct 7 after Dana flagged it, but the Oct 12 scan did not read that baseline and so omitted it. No new baseline or signal entry is needed.
+- Testlio and Global App Testing (below) both announced Select Partner status within days of each other.
+- Note: Testlio copy uses "vetted network of testers" and "human-in-the-loop," language the Applause style guide avoids for our own use, but relevant as competitor framing. Most recent items found are Feb–May 2026 (CEO Summer Weisberg, CTPO Darin Brown, ShopTalk) and already in baseline.
 
 ### Testbirds
 **Signal level:** ⚪ No change
@@ -310,10 +315,12 @@ Quiet-to-moderate week: 2 Medium signals, 0 High, 16 competitors with no confirm
 - Nothing new. Owler lists a minor YouTube item from June. EPAM's Oct 5 "Frontier AI" service remains parent-company context, not a Test IO change.
 
 ### Global App Testing
-**Signal level:** ⚪ No change
-**URLs checked:** Web search
+**Signal level:** 🔴 High *(corrected 2026-10-13; originally ⚪ No change — missed in the first pass)*
+**URLs checked:** https://www.globalapptesting.com/blog/openai-select-partner (fetched), OpenAI Partner Network announcement (fetched), PR wire coverage (Yahoo Finance / newsfile, Oct 7)
 **Changes noted:**
-- Nothing new dated this week. Latest blog items found are June 2026.
+- **Named an OpenAI Select Partner** in the OpenAI Partner Network. GAT's own blog post is dated **Aug 18, 2026**; a wire press release ran **Oct 7, 2026**. The first scan pass missed both. Select is the entry tier of three (Select, Advanced, Elite); OpenAI launched the network June 14, 2026 with a $150M investment.
+- GAT's framing: "evaluate the AI, not just the interface" (what models and agents say, decide and do), "human experience captured as agent-ready data" (annotations, response rankings, screen-recorded task traces), and real-world validation across languages, cultures and devices. Cites 120,000+ professional testers across 190+ countries.
+- This is the sourcing behind the "Working with OpenAI and others" homepage line noted in the Oct 5 digest. It directly overlaps Applause's AI evaluation, human-in-the-loop and real-world testing positioning.
 
 ### UNGUESS
 **Signal level:** ⚪ No change
@@ -386,8 +393,8 @@ Quiet-to-moderate week: 2 Medium signals, 0 High, 16 competitors with no confirm
 
 ## Fetch errors
 
-- No direct URL fetches were attempted this run; the sandbox shell is unavailable and the run relied on WebSearch only.
-- Searches for UNGUESS, Centific and QualityLogic returned mostly unrelated results (UN events, Nobel Prize pages, QuickLogic), so those entries have weak coverage.
+- The scan pass relied on WebSearch only. The fetch tool only accepts URLs that already appeared in a search result or in a message from Dana, so it can't open competitor newsrooms cold (for example testlio.com/news was blocked).
+- Follow-up 2026-10-13 re-ran weak searches: UNGUESS/Testbirds (only the June 8 acquisition, no new news), Centific (no results on the Reinforce Labs event), QualityLogic (only an older AI-tool accessibility case study). Still thin; no new findings for these three.
 
 ## Notes
 
