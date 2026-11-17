@@ -1,0 +1,7 @@
+# Discovery Scan — 2026-09-08
+
+## Summary
+No qualifying new candidates found this week. This week's sweep mostly resurfaced names already flagged in last week's scan (Mindgard, Irregular, Aim Intelligence — all AI red-teaming/evaluation vendors, already in `latest-signals.json` as of 2026-09-01) or found automation-only tools that fail the managed-service bar.
+
+## Notes
+AI red-teaming/evaluation-as-a-service remains the most active adjacent category, but no net-new entrants surfaced beyond last week's Mindgard/Irregular/Aim Intelligence — flagging this so Dana knows the searches ran but converged on already-tracked signals rather than going stale. Reviewed and excluded as non-qualifying this week: ManaMind and nunu.ai (AI agents that autonomously test video games — no managed human-in-the-loop service layer, pure automation product); QA.tech, Confident AI, and other "AI testing tool" vendors surfaced under G2/Show HN-style searches (dev tools/frameworks, not managed services); Innodata's Generative AI Test and Evaluation Platform (an established public company's product line, not a new entrant). Also noted: Global App Testing (GAT AI GroundTruth, March 2026) and Digivante (JourneyEval AI, June 2026) — both already-tracked/watchlisted competitors — have launched new AI-evaluation service lines, which is more relevant to the weekly competitive scan than to discovery, but worth flagging as a sign the AI-evaluation crowdtesting overlap is intensifying among names Applause already tracks.
